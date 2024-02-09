@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<title>FF_Radar</title>
+<script src="microajax.js"></script>
+<script type="text/javascript">
+	var reloadPeriod = 1000;
+
+	function run(){
+		running = true;
+		loadValues();
+	}
+	
+	function onBodyLoad(){
+		var refreshInput = document.getElementById("refresh-rate");
+		refreshInput.value = reloadPeriod;
+		refreshInput.onchange = function(e){
+		var value = parseInt(e.target.value);
+		reloadPeriod = (value > 0)?value:0;
+		e.target.value = reloadPeriod;
+		}
+		var stopButton = document.getElementById("stop-button");
+		stopButton.onclick = function(e){
+			running = false;
+		}
+		var startButton = document.getElementById("start-button");
+		startButton.onclick = function(e){
+			run();
+		}
+		run();
+	}
+	
+	function loadValues() {
+		if(!running) return;
+		setValues("/rest/values");
+		setTimeout(loadValues, reloadPeriod);
+	}
+
+	function includeHTML() {
+		var z, i, elmnt, file, xhttp;
+		/* Loop through a collection of all HTML elements: */
+		z = document.getElementsByTagName("*");
+		for (i = 0; i < z.length; i++) {
+			elmnt = z[i];
+			/*search for elements with a certain attribute:*/
+			file = elmnt.getAttribute("w3-include-html");
+			if (file) {
+				/* Make an HTTP request using the attribute value as the file name: */
+				xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.readyState == 4) {
+						if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+						if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+						/* Remove the attribute, and call this function once more: */
+						elmnt.removeAttribute("w3-include-html");
+						includeHTML();
+					}
+				}
+				xhttp.open("GET", file, true);
+				xhttp.send();
+				/* Exit the function: */
+				return;
+			}
+		}
+	}
+</script>
+
+</head>
+<body id="index" style="margin:0; padding:0;" onload="onBodyLoad()">
+<div align="center">
+	<strong><span id="header"></span></strong>	
+</div>
+<hr>
+<div style="display: block; border: 1px solid rgb(68, 68, 68); padding: 5px; margin: 5px; width: 362px; background-color: rgb(238, 238, 238);">
+	<label>Maj (ms):</label>
+	<input type="number" id="refresh-rate"/>
+	<input type="button" id="start-button" value="Start"/>
+	<input type="button" id="stop-button" value="Stop"/>
+</div>
+<hr>
+<div w3-include-html="index_user.html"></div>
+<hr>
+<a href="javascript:loadValues()" class="btn btn--m btn--blue">Refresh</a>&nbsp;
+<a href="admin.html" class="btn btn--m btn--blue">Admin</a></body>
+<script>
+	includeHTML();
+</script> 
+</body>
+</html>

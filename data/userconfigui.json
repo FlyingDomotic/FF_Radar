@@ -1,0 +1,42 @@
+{
+    "groups": [
+            {
+            "title": "Domoticz parameters",
+            "entities": [
+                {
+                    "name": "statusFlagIdx",
+                    "title": "IDX to send detected target flag to ",
+                    "attributes": {
+                        "type": "number",
+                        "min": 0
+                    }
+                },
+                {
+                    "name": "statusCountIdx",
+                    "title": "IDX to send count of detected target to ",
+                    "attributes": {
+                        "type": "number",
+                        "min": 0
+                    }
+                },
+                {
+                    "name": "movingFlagIdx",
+                    "title": "IDX to send moving target flag to ",
+                    "attributes": {
+                        "type": "number",
+                        "min": 0
+                    }
+                },
+                {
+                    "name": "movingCountIdx",
+                    "title": "IDX to send count of moving target to ",
+                    "attributes": {
+                        "type": "number",
+                        "min": 0
+                    }
+                }
+
+            ]
+        }
+    ]
+}
