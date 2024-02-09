@@ -4,7 +4,7 @@
             "title": "Domoticz parameters",
             "entities": [
                 {
-                    "name": "statusFlagIdx",
+                    "name": "presenceFlagIdx",
                     "title": "IDX to send detected target flag to ",
                     "attributes": {
                         "type": "number",
@@ -12,7 +12,7 @@
                     }
                 },
                 {
-                    "name": "statusCountIdx",
+                    "name": "presenceCountIdx",
                     "title": "IDX to send count of detected target to ",
                     "attributes": {
                         "type": "number",
