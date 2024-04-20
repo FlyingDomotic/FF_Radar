@@ -63,3 +63,26 @@ If using Arduino IDE, you'll have to install the following libraries:
 	- https://github.com/FlyingDomotic/FF_Trace
 	- https://github.com/FlyingDomotic/FF_Interval
 	- https://github.com/FlyingDomotic/FF_WebServer
+
+## Idea about coverage ##
+
+Giving datasheet, you can expect the following coverage giving a distance between radar and target.
+
+| Meters | Azimut | Pitch |
++--------+--------+-------+
+|        |   65°  |  35°  |
+|  0,1   |  0,09  | 0,06  |
+|  0,25  |  0,23  | 0,14  |
+|  0,5   |  0,45  | 0,29  |
+|  0,75  |  0,68  | 0,43  |
+|   1    |  0,91  | 0,57  |
+|  1,5   |  1,36  | 0,86  |
+|   2    |  1,81  | 1,15  |
+|  2,5   |  2,27  | 1,43  |
+|   3    |  2,72  | 1,72  |
+|  3,5   |  3,17  | 2,01  |
+|   4    |  3,63  | 2,29  |
+|  4,5   |  4,08  | 2,58  |
+|   5    |  4,53  | 2,87  |
+|  5,5   |  4,98  | 3,15  |
+|   6    |  5,44  | 3,44  |
