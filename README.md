@@ -86,3 +86,5 @@ Giving datasheet, you can expect the following coverage giving a distance betwee
 |   5    |  4,53  | 2,87  |
 |  5,5   |  4,98  | 3,15  |
 |   6    |  5,44  | 3,44  |
+
+You can have a look at horizontalCoverage.jpg and verticalCoverage.jpg files to get a visual estimation.
