@@ -69,7 +69,7 @@ If using Arduino IDE, you'll have to install the following libraries:
 Giving datasheet, you can expect the following coverage giving a distance between radar and target.
 
 | Meters | Azimut | Pitch |
-+--------+--------+-------+
+|--------|----------------|
 |        |   65°  |  35°  |
 |  0,1   |  0,09  | 0,06  |
 |  0,25  |  0,23  | 0,14  |
